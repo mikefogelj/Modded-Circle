@@ -1,0 +1,44 @@
+//Style for heading section
+.heading-section{
+    background: linear-gradient(rgb(225, 112, 26), rgb(247, 164, 64));
+    padding: 100px;
+    padding-bottom: 100px;
+
+    h1.title {
+        font-weight: bold;
+        color: rgb(170, 170, 170);
+        text-shadow: 0px 1px 2px black;
+    }
+}
+
+//everything wrapped in container
+.container {
+    max-width: 500px;
+}
+//add engine box style
+.add-engine-box {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(170, 170, 170, 0.5);
+    border-radius: 5px;
+    margin-top: -25px;
+}
+//add aero box style
+.add-aero-box {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(170, 170, 170, 0.5);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+//add wheels box style
+.add-wheels-box {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(170, 170, 170, 0.5);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+

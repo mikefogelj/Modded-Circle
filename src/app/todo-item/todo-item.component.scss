@@ -1,0 +1,87 @@
+//SCSS code for the item wrapper
+.todo-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(170, 170, 170 , 0.5);
+    
+    cursor: pointer;
+
+    &.completed {
+        color: rgb(170, 170, 170);
+    }
+}
+//check box style, changes color to grey used during all of application
+.todo-item .check-box {
+    display: flex;
+    flex-shrink: 0;
+    border: 2.5px solid rgb(170, 170, 170);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 8px;
+    transition: background-color 0.1s;
+
+    //google material icon
+    i.material-icons {
+        margin: auto;
+
+        //hidden by default
+        opacity: 0;
+        transition: opacity 0.1s;
+    }
+}
+//when hover over the check box, item changes to indicate that we are hovering
+.todo-item:hover .check-box {
+    background:rgb(170, 170, 170);
+    opacity: 0.3;
+    i.material-icons {
+        opacity: 0.5;
+    }
+}
+//when check box is clicked, switch from grey to orange used in application
+.todo-item.completed .check-box {
+    background: rgb(247, 164, 64);
+    border-color: rgb(247, 164, 64);
+    i.material-icons {
+        opacity: 1;
+        color: black;
+    }
+}
+//control box to keep in right positioning
+.todo-item .todo-controls-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+
+    //hide by default
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.1s, visibility 0.1s;
+}
+//ehrn hovering over something in the controls
+.todo-item:hover .todo-controls-box{
+    opacity: 1;
+    visibility: visible;
+}
+//style for controls box
+.todo-controls-box .todo-control-button {
+    display: flex;
+    background: rgba(170, 170, 170 , 0.2);
+    padding: 0px 5px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+
+    &:hover {
+        background:rgb(170, 170, 170);
+    }
+
+    &:active {
+        background: rgb(247, 164, 64);
+    }
+}

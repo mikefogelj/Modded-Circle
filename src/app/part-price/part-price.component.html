@@ -1,0 +1,23 @@
+<h1 class="title">Add Price</h1>
+<div mat-dialgof-content>
+    <form #formPrice="ngForm" (ngSubmit)="onFormSubmitPrice(formPrice)">
+       <div class="field">
+           <div class="control">
+               <input type="text" class="input" [ngModel]="todo.text" name="text" required placeholder="Type Price">
+           </div>
+       </div> 
+
+       <br>
+
+       <div class="field is-grouped is-grouped-right">
+           <div class="control">
+               <button type="button" class="button is-light" (click)="close()">Cancel</button>
+           </div>
+
+           <div class="control">
+               <button type="submit" class="button styled-button">Save</button>
+           </div>
+       </div>
+
+    </form>
+</div>

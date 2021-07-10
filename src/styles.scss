@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bulma/bulma.sass';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0;  }
+//style sheet for whole app
+.styled-button {
+    background: rgb(170, 170, 170);
+    border: none;
+    color: rgb(225, 112, 26);
+    font-weight: 600;
+    opacity: 0.8;
+    //when hovering
+    &:hover {
+        opacity: 1;
+        color: rgb(225, 112, 26);
+        border: black;
+        box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    }
+    //when clicked
+    &:active {
+        opacity: 0.5;
+        background:rgba(0, 0, 0, 1);
+    }
+    //material icons wrapper margins
+    i.material-icons {
+        margin-right: 5px;
+        margin-left: -4px;
+    }
+}
+//if form is filled out turns green
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  //if form is not filled out, is red
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

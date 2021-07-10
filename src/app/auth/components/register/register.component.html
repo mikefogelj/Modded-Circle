@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-5 offset md-3 mt-4">
+        <h3>Register your account</h3>
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Username</label>
+              <input type="text" name="username" ngModel required #username="ngModel"
+              class="form-control" id="registerUsername" placeholder="Enter Username">
+            </div>
+
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email</label>
+                <input type="email" name="email" ngModel required #email="ngModel"
+                class="form-control" id="registerEmail" placeholder="Enter Email">
+              </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input type="password" name="password" ngModel required #password="ngModel"
+              class="form-control" id="registerPassword" placeholder="Please enter Password">
+            </div>
+            <button type="submit" (click)="onSignUp(email.value, password.value)" [routerLink]="['/login']"[disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+          </form>
+    </div>
+</div>

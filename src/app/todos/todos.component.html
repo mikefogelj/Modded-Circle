@@ -1,0 +1,88 @@
+<div *ngIf="!isSignedIn">
+  <section class="heading-section">
+    <h1 class="title is-1 has-text-centered">Modded Circle</h1>
+    
+  </section>
+  
+  <div class="container">
+    <div class="add-engine-box">
+      <form #form="ngForm" (ngSubmit)="onFormSubmitEngine(form)">
+        <h2 class="title is-5">Add Engine Modification</h2>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input ngModel #engineTextField="ngModel" required minlength="1" name="text" class="input" type="text"
+              placeholder="Please Enter an Engine Modification">
+          </p>
+          <p class="control">
+            <button class="button styled-button">
+              <i class="material-icons">
+                add_circle_outline
+              </i>
+              Add to Build!
+            </button>
+          </p>
+        </div>
+  
+        <p class="help is-danger" *ngIf="engineTextField.invalid">Please enter the text of Engine modification</p>
+      </form>
+    </div>
+  
+    <div class="add-aero-box">
+      <form #formAero="ngForm" (ngSubmit)="onFormSubmitAero(formAero)">
+        <h2 class="title is-5">Add Aero Modification</h2>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input ngModel #aeroTextField="ngModel" required minlength="1" name="text" class="input" type="text"
+              placeholder="Please Enter an Aero Modification">
+          </p>
+          <p class="control">
+            <button class="button styled-button">
+              <i class="material-icons">
+                add_circle_outline
+              </i>
+              Add to Build!
+            </button>
+          </p>
+        </div>
+        <p class="help is-danger" *ngIf="aeroTextField.invalid">Please enter the text of Aero modification</p>
+      </form>
+    </div>
+  
+    <div class="add-wheels-box">
+      <form #formWheels="ngForm" (ngSubmit)="onFormSubmitWheels(formWheels)">
+        <h2 class="title is-5">Add Wheels</h2>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input ngModel #wheelTextField="ngModel" required minlength="1" name="text" class="input" type="text"
+              placeholder="Please Enter a set of Wheels">
+          </p>
+          <p class="control">
+            <button class="button styled-button">
+              <i class="material-icons">
+                add_circle_outline
+              </i>
+              Add to Build!
+            </button>
+          </p>
+        </div>
+        <p class="help is-danger" *ngIf="wheelTextField.invalid">Please enter the set of wheels</p>
+      </form>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="container">
+      <div class="todo-list">
+        <app-todo-item 
+          *ngFor="let todo of todos" [todo]="todo" 
+          (todoClicked)="onTodoClicked(todo)"
+          (editClicked)="editTodo(todo)"
+          (deleteClicked)="deleteTodo(todo)"
+          (addClicked)="addPrice(todo)">
+        </app-todo-item>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-home>
